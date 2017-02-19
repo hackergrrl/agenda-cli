@@ -45,7 +45,7 @@ else if (process.argv[2] === 'month' && process.argv.length === 3) {
 
 else if (process.argv[2] === 'remove' && process.argv.length === 4) {
   agenda.remove(process.argv[3], function (err, node) {
-    if (err.notFound) {
+    if (err && err.notFound) {
       console.log('No such key found.')
     } else if (err) {
       console.log('ERROR: ', err)
