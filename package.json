@@ -1,0 +1,27 @@
+{
+  "name": "agenda",
+  "description": "a small cli program to keep track of things in the future",
+  "author": "Stephen Whitmore <sww@eight.net>",
+  "version": "0.0.0",
+  "repository": {
+    "url": "git://github.com/noffle/agenda.git"
+  },
+  "homepage": "https://github.com/noffle/agenda",
+  "bugs": "https://github.com/noffle/agenda/issues",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "standard"
+  },
+  "keywords": [],
+  "dependencies": {
+    "norcal": "^3.1.1",
+    "strftime": "^0.10.0",
+    "through2": "^2.0.3"
+  },
+  "devDependencies": {
+    "tape": "~4.6.2",
+    "standard": "~8.3.0"
+  },
+  "license": "ISC"
+}

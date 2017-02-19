@@ -1,0 +1,11 @@
+USAGE:
+
+  agenda
+
+    Prints all upcoming events for the week ahead.
+
+
+  agenda add 'date string' 'event description'
+
+    Creates a new event with the given description and date.
+
