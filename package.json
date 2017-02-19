@@ -2,7 +2,7 @@
   "name": "agenda-cli",
   "description": "a small cli program to keep track of things in the future",
   "author": "Stephen Whitmore <sww@eight.net>",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "url": "git://github.com/noffle/agenda-cli.git"
   },
