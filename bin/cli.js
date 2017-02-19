@@ -9,6 +9,7 @@ var through = require('through2')
 var strftime = require('strftime')
 var config = require('application-config-path')
 var mkdir = require('mkdirp')
+var termsize = require('term-size')
 
 var root = config('agenda')
 mkdir.sync(root)
@@ -62,12 +63,24 @@ function printUsage () {
 }
 
 function display (begin, end) {
+  var width = termsize().columns
+
   agenda.query({
     gt: begin,
     lt: end
   }).pipe(through.obj(function (ev, _, next) {
     var time = strftime('%a %b %e %H:%M', ev.time)
-    console.log(time + ': ' + ev.value.title)
+    var hash = '[' + ev.key + ']'
+    var line = time + ': ' + ev.value.title
+    process.stdout.write(line)
+
+    var spaces = width - line.length - hash.length
+    for (var i=0; i < spaces; i++) {
+      process.stdout.write(' ')
+    }
+
+    console.log(hash)
+
     next()
   }))
 }
