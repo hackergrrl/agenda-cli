@@ -6,6 +6,9 @@
   "repository": {
     "url": "git://github.com/noffle/agenda.git"
   },
+  "bin": {
+    "agenda": "bin/cli.js"
+  },
   "homepage": "https://github.com/noffle/agenda",
   "bugs": "https://github.com/noffle/agenda/issues",
   "main": "index.js",
@@ -13,7 +16,12 @@
     "test": "tape test/*.js",
     "lint": "standard"
   },
-  "keywords": [],
+  "keywords": [
+    "agenda",
+    "schedule",
+    "planning",
+    "calendar"
+  ],
   "dependencies": {
     "application-config-path": "^0.1.0",
     "mkdirp": "^0.5.1",
