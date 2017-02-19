@@ -14,16 +14,19 @@ USAGE:
     Prints all upcoming events for the time period ahead. If no argument is
     given, 'week' is shown.
 
-
   agenda add 'date string' 'event description'
 
     Creates a new event with the given description and date.
+
+  agenda remove <ID>
+
+    Remove an event by its ID hash.
 
 $ agenda add 'next wednesday' 'L.A. conference'
 [825e33a09164898b] Added "L.A. conference": next wednesday.
 
 $ agenda
-Wed Feb 22: L.A. conference
+Wed Feb 22: L.A. conference                             [825e33a09164898b]
 ```
 
 ## Install
