@@ -10,3 +10,8 @@ USAGE:
 
     Creates a new event with the given description and date.
 
+
+  agenda remove <ID>
+
+    Remove an event by its ID hash.
+

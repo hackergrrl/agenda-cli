@@ -43,6 +43,18 @@ else if (process.argv[2] === 'month' && process.argv.length === 3) {
   showMonth()
 }
 
+else if (process.argv[2] === 'remove' && process.argv.length === 4) {
+  agenda.remove(process.argv[3], function (err, node) {
+    if (err.notFound) {
+      console.log('No such key found.')
+    } else if (err) {
+      console.log('ERROR: ', err)
+    } else {
+      console.log('[' + node.value.d + '] Removed')
+    }
+  })
+}
+
 else if (process.argv[2] === 'add' && process.argv.length === 5) {
   agenda.add(process.argv[3], {
     value: {
