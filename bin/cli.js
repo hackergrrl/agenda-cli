@@ -22,20 +22,19 @@ var agenda = norcal({
 })
 
 if (process.argv.length === 2) {
-  var begin = new Date()
-  var end = new Date()
-  // end.setDate(end.getDate() + 7)
-  end.setDate(end.getDate() + 30)
+  showWeek()
+}
 
-  console.log('UPCOMING 30 DAYS')
-  agenda.query({
-    gt: begin,
-    lt: end
-  }).pipe(through.obj(function (ev, _, next) {
-    var time = strftime('%a %b %e %H:%M', ev.time)
-    console.log(time + ': ' + ev.value.title)
-    next()
-  }))
+else if (process.argv[2] === 'week' && process.argv.length === 3) {
+  showWeek()
+}
+
+else if (process.argv[2] === 'day' && process.argv.length === 3) {
+  showDay()
+}
+
+else if (process.argv[2] === 'month' && process.argv.length === 3) {
+  showMonth()
 }
 
 else if (process.argv[2] === 'add' && process.argv.length === 5) {
@@ -57,3 +56,34 @@ function printUsage () {
   fs.createReadStream(path.join(__dirname, 'usage.txt')).pipe(process.stdout)
 }
 
+function display (begin, end) {
+  agenda.query({
+    gt: begin,
+    lt: end
+  }).pipe(through.obj(function (ev, _, next) {
+    var time = strftime('%a %b %e %H:%M', ev.time)
+    console.log(time + ': ' + ev.value.title)
+    next()
+  }))
+}
+
+function showDay () {
+  var begin = new Date()
+  var end = new Date()
+  end.setDate(end.getDate() + 1)
+  display(begin, end)
+}
+
+function showWeek () {
+  var begin = new Date()
+  var end = new Date()
+  end.setDate(end.getDate() + 7)
+  display(begin, end)
+}
+
+function showMonth () {
+  var begin = new Date()
+  var end = new Date()
+  end.setDate(end.getDate() + 30)
+  display(begin, end)
+}

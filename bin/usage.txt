@@ -1,8 +1,9 @@
 USAGE:
 
-  agenda
+  agenda [day|week|month]
 
-    Prints all upcoming events for the week ahead.
+    Prints all upcoming events for the time period ahead. If no argument is
+    given, 'week' is shown.
 
 
   agenda add 'date string' 'event description'
