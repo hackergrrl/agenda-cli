@@ -31,8 +31,10 @@ Wed Feb 22: L.A. conference
 With [npm](https://npmjs.org/) installed, run
 
 ```
-$ npm install -g agenda
+$ npm install -g agenda-cli
 ```
+
+Note that the package name is `agenda-cli`, not `agenda`.
 
 ## Future
 
