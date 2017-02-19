@@ -1,16 +1,16 @@
 {
-  "name": "agenda",
+  "name": "agenda-cli",
   "description": "a small cli program to keep track of things in the future",
   "author": "Stephen Whitmore <sww@eight.net>",
   "version": "0.0.0",
   "repository": {
-    "url": "git://github.com/noffle/agenda.git"
+    "url": "git://github.com/noffle/agenda-cli.git"
   },
   "bin": {
     "agenda": "bin/cli.js"
   },
-  "homepage": "https://github.com/noffle/agenda",
-  "bugs": "https://github.com/noffle/agenda/issues",
+  "homepage": "https://github.com/noffle/agenda-cli",
+  "bugs": "https://github.com/noffle/agenda-cli/issues",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js",
@@ -20,7 +20,8 @@
     "agenda",
     "schedule",
     "planning",
-    "calendar"
+    "calendar",
+    "cli"
   ],
   "dependencies": {
     "application-config-path": "^0.1.0",
