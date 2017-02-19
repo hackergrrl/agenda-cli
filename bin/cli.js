@@ -7,10 +7,15 @@ var hyperlog = require('hyperlog')
 var level = require('level')
 var through = require('through2')
 var strftime = require('strftime')
+var config = require('application-config-path')
+var mkdir = require('mkdirp')
+
+var root = config('agenda')
+mkdir.sync(root)
 
 var db = {
-  log: level('./log.db'),
-  index: level('./index.db')
+  log: level(path.join(root, 'log.db')),
+  index: level(path.join(root, 'index.db'))
 }
 // var db = {
 //   log: level('/home/sww/.norcal/log.db'),
